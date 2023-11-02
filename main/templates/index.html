@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1 id="greeting">Привет, {{ user.username }}</h1>
+    {% if tasks|length == 0 %}
+        <p>Дел нет, отдыхай</p>
+    {% else %}
+        {% for task in tasks %}
+            <div class="task">
+                <h3>{{ task.name }}</h3>
+                <p>{{ task.description }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'add' %}">Создать дело</a>
+{% endblock %}

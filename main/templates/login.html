@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>Авторизация</h1>
+    <form method="post">{% csrf_token %}
+        <input required type="text" placeholder="Имя" name="username">
+        <input required type="password" placeholder="Пароль" name="password">
+        <button type="submit">Авторизоваться</button>
+        <span>{{ error }}</span>
+    </form>
+    <a href="{% url 'signup' %}">Нет аккаунта? Регистрируйся</a>
+{% endblock %}

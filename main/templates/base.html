@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}" target="_parent">Главная</a>
+        <a href="{% url 'logout' %}" target="_parent">Выйти</a>
+    </header>
+    <div id="root">
+        {% block body %}
+        {% endblock %}
+    </div>
+</body>
+</html>
